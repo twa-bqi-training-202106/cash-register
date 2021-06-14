@@ -6,7 +6,7 @@ class CashRegisterTest {
 	@Test
 	void should_process_execute_printing() {
 		//given
-		CashRegister cashRegister = new CashRegister();
+		CashRegister cashRegister = new CashRegister(new Printer());
 		Purchase purchase = new Purchase();
 		//when
 		cashRegister.process(purchase);
