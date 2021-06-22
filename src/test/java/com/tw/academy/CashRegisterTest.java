@@ -4,13 +4,15 @@ import org.junit.jupiter.api.Test;
 
 class CashRegisterTest {
 	@Test
-	void should_process_execute_printing() {
+	void should_process_execute_notifier() {
 		//given
-		CashRegister cashRegister = new CashRegister(new Printer());
+		Printer printer = new Printer();
+		Notifier notifier = new Notifier();
+		CashRegister cashRegister = new CashRegister(printer, notifier);
 		Purchase purchase = new Purchase();
 		//when
 		cashRegister.process(purchase);
 		//then
-		//verify that cashRegister.process will trigger print
+		//verify that cashRegister.process will trigger notifier
 	}
 }
